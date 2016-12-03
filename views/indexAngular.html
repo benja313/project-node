@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="app" ng-controller="appChat">
+  <head>
+    <title>Socket.IO chat angular</title>
+	<link type="text/css" rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+	<div>Hola {{ user_name }} {{apellido}}</div>
+    <ul id="messages">
+		<li ng-repeat="mensaje in mensajes track by $index" >
+			{{ mensaje }}
+		</li>
+	</ul>
+    <form ng-submit="enviarMensaje()">
+      <input type="text" id="message" autocomplete="off" ng-model="message" /><button>Send</button>
+    </form>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="../js/angular.min.js"></script>
+	<script src="../js/controller.js"></script>
+  </body>
+</html>

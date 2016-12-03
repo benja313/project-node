@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="AppSubastas">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Subastas</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+
+<body >
+  <br>
+  <br>
+  <br>
+
+  
+  <div class="container col-md-6 col-md-offset-3" >
+    <div class="jumbotron">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="page-header">
+            <h2>Datos de Postor</h2>
+          </div>
+          
+          <!-- ng-submit para agregar una subasta remplzar despues... -->
+          <form ng-controller="InsertCtrl" ng-submit="agregarSubasta()" class="form">
+            <div class="form-group">
+              <input type="text" required placeholder="Ingrese Nombre" class="form-control" ng-model="nombre">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" rows="3" required placeholder="Ingrese Descripcion" ng-model="descripcion"></textarea>
+            </div>
+           
+             <div class="form-group">
+              <input type="text" required placeholder="Ingrese Email" class="form-control" ng-model="email">
+            </div>
+            <div class="form-group">
+              <input type="text" required placeholder="Link de imagen" class="form-control" ng-model="imagen">
+            </div>
+            <div class="form-group">
+              
+                <input type="number" required placeholder="Ingrese valor inicial" class="form-control" ng-model="valor">
+              
+            </div>
+              <a href="/puja">
+            <input type="submit" class="btn btn-primary" value="Agregar a las Subastas"/>
+            </a>
+          </form>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+
+  <script src="socket.io/socket.io.js"></script>
+  <script src="../js/angular.min.js"></script>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/subastas.js"></script>
+
+</body>
+
+</html>

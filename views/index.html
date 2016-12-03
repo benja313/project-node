@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="AppFormulario">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Subastas</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+
+<body >
+  <br>
+  <br>
+  <br>
+
+  
+  <div class="container col-md-6 col-md-offset-3" >
+    <div class="jumbotron">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="page-header">
+            <h2>Datos de Postor</h2>
+          </div>
+          <form ng-controller="InsertCtrl" ng-submit="agregarPostor()" class="form">
+            <div class="form-group">
+              <input type="text" required placeholder="Ingrese Nombre" class="form-control" ng-model="nombre">
+            </div>
+            <div class="form-group">
+              <input type="text" required placeholder="Ingrese Rut" class="form-control" ng-model="rut">
+            </div>
+            <div class="form-group">
+              <input type="text" required placeholder="Ingrese Correo" class="form-control" ng-model="email">
+            </div>
+        
+        <!--
+            <div class="form-group">
+              
+                <input type="number" required placeholder="Ingrese su puja" class="form-control" ng-model="puja">
+              
+            </div>
+      
+      --->
+              <a href="/puja">
+            <input type="submit" class="btn btn-primary" value="Entrar" />
+            </a>
+          </form>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+
+  <script src="socket.io/socket.io.js"></script>
+  <script src="../js/angular.min.js"></script>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/index.js"></script>
+
+</body>
+
+</html>

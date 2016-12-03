@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app="AppPuja">
+<head>
+  <meta charset="UTF-8">
+  <title>Subastas</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body >
+  <br>
+  <br>
+  <br>
+  
+    
+  <div style="float:left;width:21%;border-right:1px solid black;height:300px;padding:10px;overflow:scroll-y">
+        <b class="title">Subastas</b>
+        <p>{{subasta}}</p>
+       <!-- <div id="subastas"></div> -->
+    </div>
+  
+  
+  
+  
+  
+  <div  style="overflow:scroll-y;padding:10px; width:79% ; float:right" >
+    <div class="jumbotron">
+    <div class="row">
+      <div class="container col-md-6 ">
+        <div class="card"style="margin-left:20px" >
+          <img class="img-rounded" src="http://issuespost.com/wp-content/uploads/2016/07/960x0.jpg" alt="Card image cap" width="290px">
+          <div class="card-block">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            
+          </div>
+
+        </div>
+        </div>
+          <div class="col-md-6">
+            <div class="col-md-3" ng-controller="CtrlPuja">
+                  <p class="title">Actual: </p>
+              <p class="price"> {{valor | currency }} </p>
+            
+                <form  ng-submit="enviarPuja()" class="form">
+                
+                <div class="form-group">
+                  <input type="number" required placeholder="Ingrese su puja" class="form-control" ng-model="puja">
+                </div>
+                  
+                <input type="submit" class="btn btn-primary" value="Enviar"/>
+              </form>
+            </div>
+            
+            
+            <div>
+      <a href="/subasta">
+            <button type="button" class="btn btn-primary">Agregar Articulo</button>
+      </a>
+  </div>
+            
+        </div>
+           </div>
+  </div>
+    
+  </div>
+  
+  <div>
+      
+
+<table class="table table-condensed"   style= "width:50% ;float:center" ng-controller="CtrlPuja">
+      <div class="row">
+      <tr>
+            <td>Usuario</td>
+            <td>Email</td>
+           
+      </tr>
+      <tr>
+            <!-- buscar en la base de datos -->
+            <td>{{ usuario }}</td>
+            <td>{{ email }}</td>
+            
+      </tr>
+</table>
+
+
+  </div>
+
+
+  <script src="socket.io/socket.io.js"></script>
+  <script src="../js/angular.min.js"></script>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/puja.js"></script>
+
+</body>
+</html>
