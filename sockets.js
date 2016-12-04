@@ -17,17 +17,22 @@ module.exports = function(app, io, postorModel){
 			var bson_pers= new postorModel(response);
 			bson_pers.save( function () {
 				console.log('Postor Guardado exitosamente');
+			
 
 			});
 		});
 		
-		socket.on('usuario', function(response){
-			var
-		postorModel.find( {_nombre:response.nombre}, function (err, docs) {
+		
+		
+			
+		postorModel.find( {nombre:"usuarioUltimoIngreso"}, function (err, docs) {
 					io.emit('find', docs);
 					console.log();
 			});
-		});
+		
+		
+			
+		
 		
 		socket.on('pujaActual', function (response) {
 			
@@ -40,7 +45,7 @@ module.exports = function(app, io, postorModel){
 		
 		//conexion a sala
 		 io.sockets.on('connection', function (socket) {
-    
+     
         // when the client emits 'adduser', this listens and executes
         socket.on('addsubasta', function(subasta){
             // store the username in the socket session for this client

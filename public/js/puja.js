@@ -6,14 +6,19 @@ app.factory('socket', function() {
     return socket;
 });
 
+
+
+
 //inutil por ahora
 app.controller('CtrlPuja', function ($scope, socket) {
   console.log('Entro en CtrlPuja') ;
   
+ 
+
+
 
   $scope.enviarPuja= function () {
     socket.emit('pujaActual', $scope.puja);
-
      console.log($scope.puja);
   }
   
@@ -29,13 +34,16 @@ app.controller('CtrlPuja', function ($scope, socket) {
         $scope.$digest();
     });
    
-      socket.on('find', function(scope, user){
-        $scope.usuario=user[0].nombre;
-        console.log("Recibí : "+ user[0].nombre);
-        
-    });
    
+      socket.on('find', function(msg){
+        console.log("Recibí usuario: "+ msg[0].nombre);
+            $scope.usuario=msg[0].nombre;
+             $scope.$digest();
   
 });
+      
+      
+});
+
 
 

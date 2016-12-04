@@ -18,6 +18,8 @@ app.controller('InsertCtrl', function ($scope, socket){
         };
     
         socket.emit('insert', postor);
+        //emito al servidor un usuario
+        socket.emit('user', postor);
         
         $scope.nombre='';
         $scope.rut='';
@@ -27,6 +29,9 @@ app.controller('InsertCtrl', function ($scope, socket){
     
 
     };
+    
+    
+    
  
   
 });

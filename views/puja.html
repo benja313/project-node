@@ -6,12 +6,14 @@
   <link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
 <body >
+ 
+
   <br>
   <br>
   <br>
   
     
-  <div style="float:left;width:21%;border-right:1px solid black;height:300px;padding:10px;overflow:scroll-y">
+  <div style="float:left;width:21%;border-right:1px solid black;height:300px;padding:10px;overflow:scroll-y" ng-controller="CtrlPuja">
         <b class="title">Subastas</b>
         <p>{{subasta}}</p>
        <!-- <div id="subastas"></div> -->
@@ -55,15 +57,15 @@
       <a href="/subasta">
             <button type="button" class="btn btn-primary">Agregar Articulo</button>
       </a>
-  </div>
+      </div>
             
-        </div>
-           </div>
+       </div>
+    </div>
   </div>
     
   </div>
   
-  <div>
+  
       
 
 <table class="table table-condensed"   style= "width:50% ;float:center" ng-controller="CtrlPuja">
@@ -79,10 +81,10 @@
             <td>{{ email }}</td>
             
       </tr>
+        </div>
 </table>
 
 
-  </div>
 
 
   <script src="socket.io/socket.io.js"></script>
